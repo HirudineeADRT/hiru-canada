@@ -6,5 +6,6 @@ exports.handler = function (event, context, callback) {
     // You must always end/destroy the DB connection after it's used
 
 
+
     callback(null, { "message": "Successfully executed" });
 }

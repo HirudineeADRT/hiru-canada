@@ -27,7 +27,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "hiru-canada/lambda.js",
-        "code": "exports.handler = function (event, context, callback) {\n    debugger;\n\n    // You can pass the existing connection to this function.\n    // A new connection will be created if it's not present as the third param \n    // You must always end/destroy the DB connection after it's used\n\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "exports.handler = function (event, context, callback) {\n    debugger;\n\n    // You can pass the existing connection to this function.\n    // A new connection will be created if it's not present as the third param \n    // You must always end/destroy the DB connection after it's used\n\n\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -37,7 +37,7 @@
         },
         "triggers": [
           {
-            "resourceName": "apigcaCentral1hiruCanadatestpost",
+            "resourceName": "apigcaCentral1hiruCanadatest123post",
             "config": {}
           }
         ],
@@ -181,6 +181,25 @@
           "enableInject": true,
           "isNewFromGlobal": false
         }
+      },
+      "apigcaCentral1hiruCanadatest123post": {
+        "name": "apigcaCentral1hiruCanadatest123post",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "ca-central-1",
+          "apiMode": 0,
+          "apiName": "hiru-canada",
+          "endpointType": "EDGE",
+          "resourceMode": 0,
+          "resourceName": "test123",
+          "resourcePath": "/test123",
+          "restMethod": "POST",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 0,
+          "stageName": "Test",
+          "mode": 0
+        }
       }
     },
     "customTemplate": {
@@ -205,6 +224,11 @@
           "version": "0.0.5",
           "dev": false,
           "notRemovable": false
+        },
+        "jimp": {
+          "name": "jimp",
+          "version": "0.6.4",
+          "language": "javascript"
         }
       }
     }
@@ -216,7 +240,7 @@
     "projectRegion": "ca-central-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1559905994349
+    "lastSave": 1559906102738
   },
   "VCS_STATE": {
     "provider": "GitHub",
