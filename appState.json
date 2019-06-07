@@ -9,7 +9,8 @@
         "isDirectory": true,
         "children": [
           "ee62855b-a4fe-4986-bcde-d576b12d8ab6",
-          "ff0fc5a0-44e9-4eb2-b51b-578943794378"
+          "ff0fc5a0-44e9-4eb2-b51b-578943794378",
+          "1e72894a-7949-4e79-bfae-171df4f2535b"
         ],
         "isRemovable": false,
         "filePath": "hiru-canada"
@@ -23,7 +24,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "hiru-canada/lambda.js",
-        "code": "exports.handler = function (event, context, callback) {\n\n    // You can pass the existing connection to this function.\n    // A new connection will be created if it's not present as the third param \n    // You must always end/destroy the DB connection after it's used\n\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "exports.handler = function (event, context, callback) {\n    debugger;\n\n    // You can pass the existing connection to this function.\n    // A new connection will be created if it's not present as the third param \n    // You must always end/destroy the DB connection after it's used\n\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -43,6 +44,12 @@
             "name": "sample",
             "functionId": "ee62855b-a4fe-4986-bcde-d576b12d8ab6",
             "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+          },
+          "935edf52-8eb3-4260-a53a-3016d65a6e40": {
+            "id": "935edf52-8eb3-4260-a53a-3016d65a6e40",
+            "name": "Copy of sample",
+            "functionId": "ee62855b-a4fe-4986-bcde-d576b12d8ab6",
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
           }
         }
       },
@@ -56,12 +63,24 @@
         "isRemovable": true,
         "filePath": "hiru-canada/ConnectionManager.js",
         "code": "module.exports = function() {\n    this.dbConnections = [];\n\n    this.dbConnections[\"test\"] = {\n        host: process.env.EndPoint_rdsTest,\n        port: process.env.Port_rdsTest,\n        user: process.env.User_rdsTest,\n        password: process.env.Password_rdsTest,\n        database: \"Hiru\"\n    };\n};"
+      },
+      "1e72894a-7949-4e79-bfae-171df4f2535b": {
+        "id": "1e72894a-7949-4e79-bfae-171df4f2535b",
+        "parent": "4d603493-0baf-4e57-b25f-4ad2fcf3b7b0",
+        "name": "test.html",
+        "type": "HTML_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru-canada/test.html",
+        "code": "<!DOCTYPE html>\n<html>\n<head>\n    <title>test</title>\n</head>\n<body>\n\n</body>\n</html>"
       }
     },
     "deletedFiles": [],
     "rootNode": "4d603493-0baf-4e57-b25f-4ad2fcf3b7b0",
     "openFiles": [
-      "ee62855b-a4fe-4986-bcde-d576b12d8ab6"
+      "ee62855b-a4fe-4986-bcde-d576b12d8ab6",
+      "1e72894a-7949-4e79-bfae-171df4f2535b"
     ],
     "currentFileId": "ee62855b-a4fe-4986-bcde-d576b12d8ab6",
     "resources": {
@@ -162,7 +181,7 @@
     "projectRegion": "ca-central-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1559901951290
+    "lastSave": 1559902335849
   },
   "VCS_STATE": {
     "provider": "GitHub",
