@@ -8,53 +8,17 @@
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "ee62855b-a4fe-4986-bcde-d576b12d8ab6",
           "ff0fc5a0-44e9-4eb2-b51b-578943794378",
           "1e72894a-7949-4e79-bfae-171df4f2535b",
           "1f41e3e1-d175-47c9-984d-d8ffe6b157ab",
           "56c18e44-729c-4bf3-8d82-4b6e89d11be7",
-          "937baf03-3a21-433b-838f-4260fc5b62f5"
+          "937baf03-3a21-433b-838f-4260fc5b62f5",
+          "e1c7bc56-ebfd-43c9-9ddf-3b5e46417580",
+          "1202d7e4-156a-4bd9-a634-54b0f9c930c1",
+          "72f7f498-4900-4b24-bb29-7dfeaa44d8d0"
         ],
         "isRemovable": false,
         "filePath": "hiru-canada"
-      },
-      "ee62855b-a4fe-4986-bcde-d576b12d8ab6": {
-        "id": "ee62855b-a4fe-4986-bcde-d576b12d8ab6",
-        "parent": "4d603493-0baf-4e57-b25f-4ad2fcf3b7b0",
-        "name": "lambda.js",
-        "type": "JS_LAMBDA",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": true,
-        "filePath": "hiru-canada/lambda.js",
-        "code": "exports.handler = function (event, context, callback) {\n    debugger;\n\n    // You can pass the existing connection to this function.\n    // A new connection will be created if it's not present as the third param \n    // You must always end/destroy the DB connection after it's used\n\n\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
-        "config": {
-          "runtime": "nodejs8.10",
-          "handler": "handler",
-          "timeout": 60,
-          "memory": 128,
-          "layers": []
-        },
-        "triggers": [
-          {
-            "resourceName": "apigcaCentral1hiruCanadatest123post",
-            "config": {}
-          }
-        ],
-        "testCases": {
-          "b297151e-6821-42d6-a8bd-4ba7abd32031": {
-            "id": "b297151e-6821-42d6-a8bd-4ba7abd32031",
-            "name": "sample",
-            "functionId": "ee62855b-a4fe-4986-bcde-d576b12d8ab6",
-            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
-          },
-          "935edf52-8eb3-4260-a53a-3016d65a6e40": {
-            "id": "935edf52-8eb3-4260-a53a-3016d65a6e40",
-            "name": "Copy of sample",
-            "functionId": "ee62855b-a4fe-4986-bcde-d576b12d8ab6",
-            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
-          }
-        }
       },
       "ff0fc5a0-44e9-4eb2-b51b-578943794378": {
         "id": "ff0fc5a0-44e9-4eb2-b51b-578943794378",
@@ -110,14 +74,118 @@
         "isRemovable": true,
         "filePath": "hiru-canada/filer.r",
         "code": ""
+      },
+      "e1c7bc56-ebfd-43c9-9ddf-3b5e46417580": {
+        "id": "e1c7bc56-ebfd-43c9-9ddf-3b5e46417580",
+        "parent": "4d603493-0baf-4e57-b25f-4ad2fcf3b7b0",
+        "name": "Authorizer.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru-canada/Authorizer.js",
+        "code": "const google = require(\"googleapis\").google;\n\nconst key = JSON.parse(process.env.GCP_SERVICE_ACCOUNT_KEY);\nconst jwtClient = new google.auth.JWT({\n    email: key.client_email,\n    key: key.private_key,\n    scopes: [\"https://www.googleapis.com/auth/cloud-platform\"]\n});\n\ngoogle.options({auth: jwtClient, project: process.env.GCP_PROJECT});"
+      },
+      "1202d7e4-156a-4bd9-a634-54b0f9c930c1": {
+        "id": "1202d7e4-156a-4bd9-a634-54b0f9c930c1",
+        "parent": "4d603493-0baf-4e57-b25f-4ad2fcf3b7b0",
+        "name": "test001",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "e90df53b-8d71-4695-8eb7-396352b7188d"
+        ],
+        "isRemovable": true,
+        "filePath": "hiru-canada/test001"
+      },
+      "e90df53b-8d71-4695-8eb7-396352b7188d": {
+        "id": "e90df53b-8d71-4695-8eb7-396352b7188d",
+        "parent": "1202d7e4-156a-4bd9-a634-54b0f9c930c1",
+        "name": "test",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "7f752e3c-9fd7-4a83-99a8-bd91b8963873"
+        ],
+        "isRemovable": true,
+        "filePath": "hiru-canada/test001/test"
+      },
+      "72f7f498-4900-4b24-bb29-7dfeaa44d8d0": {
+        "id": "72f7f498-4900-4b24-bb29-7dfeaa44d8d0",
+        "parent": "4d603493-0baf-4e57-b25f-4ad2fcf3b7b0",
+        "name": "test",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "4f3c8909-319e-4eff-af3e-4e8eadb4594b"
+        ],
+        "isRemovable": true,
+        "filePath": "hiru-canada/test"
+      },
+      "7f752e3c-9fd7-4a83-99a8-bd91b8963873": {
+        "id": "7f752e3c-9fd7-4a83-99a8-bd91b8963873",
+        "parent": "e90df53b-8d71-4695-8eb7-396352b7188d",
+        "name": "samplelambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru-canada/test001/test/samplelambda.js",
+        "code": "exports.handler = function (event, context, callback) {\n    debugger;\n\n    callback(null, { \"message\": \"Successfully executed 123\" });\n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [],
+        "testCases": {
+          "1fec9d63-ace4-400c-a310-ea67cf3d361c": {
+            "id": "1fec9d63-ace4-400c-a310-ea67cf3d361c",
+            "name": "event",
+            "functionId": "7f752e3c-9fd7-4a83-99a8-bd91b8963873",
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+          }
+        }
+      },
+      "4f3c8909-319e-4eff-af3e-4e8eadb4594b": {
+        "id": "4f3c8909-319e-4eff-af3e-4e8eadb4594b",
+        "parent": "72f7f498-4900-4b24-bb29-7dfeaa44d8d0",
+        "name": "samplelambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru-canada/test/samplelambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [],
+        "testCases": {
+          "354605c9-a60c-47f6-a3cd-3e9a3161075c": {
+            "id": "354605c9-a60c-47f6-a3cd-3e9a3161075c",
+            "name": "Unnamed event",
+            "functionId": "4f3c8909-319e-4eff-af3e-4e8eadb4594b",
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+          }
+        }
       }
     },
-    "deletedFiles": [],
+    "deletedFiles": [
+      "hiru-canada/lambda.js"
+    ],
     "rootNode": "4d603493-0baf-4e57-b25f-4ad2fcf3b7b0",
     "openFiles": [
-      "ee62855b-a4fe-4986-bcde-d576b12d8ab6"
+      "e1c7bc56-ebfd-43c9-9ddf-3b5e46417580",
+      "56c18e44-729c-4bf3-8d82-4b6e89d11be7"
     ],
-    "currentFileId": "ee62855b-a4fe-4986-bcde-d576b12d8ab6",
+    "currentFileId": "e1c7bc56-ebfd-43c9-9ddf-3b5e46417580",
     "resources": {
       "apigcaCentral1hiruCanadatestpost": {
         "name": "apigcaCentral1hiruCanadatestpost",
@@ -200,6 +268,11 @@
           "stageName": "Test",
           "mode": 0
         }
+      },
+      "datastore": {
+        "name": "datastore",
+        "type": "datastore",
+        "config": {}
       }
     },
     "customTemplate": {
@@ -210,6 +283,22 @@
       {
         "lambdaId": "all",
         "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      },
+      {
+        "lambdaId": "all",
+        "varKey": "GCP_SERVICE_ACCOUNT_KEY",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      },
+      {
+        "lambdaId": "all",
+        "varKey": "GCP_PROJECT",
         "varValue": null,
         "shouldPersist": false,
         "displayOnly": false,
@@ -229,6 +318,13 @@
           "name": "jimp",
           "version": "0.6.4",
           "language": "javascript"
+        },
+        "googleapis": {
+          "name": "googleapis",
+          "language": "javascript",
+          "version": "29.0.0",
+          "dev": false,
+          "notRemovable": false
         }
       }
     }
@@ -240,7 +336,7 @@
     "projectRegion": "ca-central-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1559906102738
+    "lastSave": 1559908957900
   },
   "VCS_STATE": {
     "provider": "GitHub",
