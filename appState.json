@@ -10,7 +10,10 @@
         "children": [
           "ee62855b-a4fe-4986-bcde-d576b12d8ab6",
           "ff0fc5a0-44e9-4eb2-b51b-578943794378",
-          "1e72894a-7949-4e79-bfae-171df4f2535b"
+          "1e72894a-7949-4e79-bfae-171df4f2535b",
+          "1f41e3e1-d175-47c9-984d-d8ffe6b157ab",
+          "56c18e44-729c-4bf3-8d82-4b6e89d11be7",
+          "937baf03-3a21-433b-838f-4260fc5b62f5"
         ],
         "isRemovable": false,
         "filePath": "hiru-canada"
@@ -74,13 +77,45 @@
         "isRemovable": true,
         "filePath": "hiru-canada/test.html",
         "code": "<!DOCTYPE html>\n<html>\n<head>\n    <title>test</title>\n</head>\n<body>\n\n</body>\n</html>"
+      },
+      "1f41e3e1-d175-47c9-984d-d8ffe6b157ab": {
+        "id": "1f41e3e1-d175-47c9-984d-d8ffe6b157ab",
+        "parent": "4d603493-0baf-4e57-b25f-4ad2fcf3b7b0",
+        "name": "hirudinee.css",
+        "type": "CSS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru-canada/hirudinee.css",
+        "code": ""
+      },
+      "56c18e44-729c-4bf3-8d82-4b6e89d11be7": {
+        "id": "56c18e44-729c-4bf3-8d82-4b6e89d11be7",
+        "parent": "4d603493-0baf-4e57-b25f-4ad2fcf3b7b0",
+        "name": "markdown.md",
+        "type": "MARKDOWN_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru-canada/markdown.md",
+        "code": ""
+      },
+      "937baf03-3a21-433b-838f-4260fc5b62f5": {
+        "id": "937baf03-3a21-433b-838f-4260fc5b62f5",
+        "parent": "4d603493-0baf-4e57-b25f-4ad2fcf3b7b0",
+        "name": "filer.r",
+        "type": "R_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru-canada/filer.r",
+        "code": ""
       }
     },
     "deletedFiles": [],
     "rootNode": "4d603493-0baf-4e57-b25f-4ad2fcf3b7b0",
     "openFiles": [
-      "ee62855b-a4fe-4986-bcde-d576b12d8ab6",
-      "1e72894a-7949-4e79-bfae-171df4f2535b"
+      "ee62855b-a4fe-4986-bcde-d576b12d8ab6"
     ],
     "currentFileId": "ee62855b-a4fe-4986-bcde-d576b12d8ab6",
     "resources": {
@@ -181,7 +216,7 @@
     "projectRegion": "ca-central-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1559902335849
+    "lastSave": 1559905994349
   },
   "VCS_STATE": {
     "provider": "GitHub",
